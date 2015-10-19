@@ -1,0 +1,25 @@
+<template name="devisAdd">
+
+	<a class="waves-effect waves-light btn" href="{{pathFor 'devisList'}}"><i class="material-icons right"></i>Retour à la liste des devis</a>
+
+	<form class="new-devis">
+		<input type="text" name="numero" placeholder="Numéro du devis" />
+		<input type="date" name="date" placeholder="Date du devis" />
+	    <select class="browser-default select-client">
+	    	<option value="" disabled selected>Choisir le client</option>
+	    	{{#each clients}}
+		      <option value="{{ _id }}">{{ nom }} {{ prenom }}</option>
+		    {{/each}}
+	    </select>
+		<input type="text" name="adresse" placeholder="Adresse du client" />
+		<input type="text" name="codePostal" placeholder="Code Postal du client" />
+		<input type="text" name="ville" placeholder="Ville du client" />
+		<input type="text" name="percentDebut" placeholder="Pourcentage début de travaux" />
+		<input type="text" name="percentPendant" placeholder="Pourcentage pendant les travaux" />
+		<input type="text" name="percentFin" placeholder="Pourcentage fin de travaux" />
+		<button class="btn waves-effect waves-light" type="submit" name="action">Créer le devis
+		    <i class="material-icons right"></i>
+		</button>
+	</form>
+
+</template>

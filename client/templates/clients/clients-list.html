@@ -1,0 +1,23 @@
+<template name="clientList">
+
+<a class="waves-effect waves-light btn" href="{{pathFor 'clientAdd'}}"><i class="material-icons right"></i>Ajouter un nouveau client</a>
+
+<table class="responsive-table striped">
+        <thead>
+          <tr>
+              <th data-field="nom">Nom</th>
+              <th data-field="prenom">Prénom</th>
+              <th data-field="adresse">Adresse</th>
+              <th data-field="codePostal">Code Postal</th>
+              <th data-field="ville">Ville</th>
+              <th data-field=""></th>
+              <th data-field=""></th>
+          </tr>
+        </thead>
+	<tbody>
+    {{#each clients}}
+      {{> clientItem}}
+    {{/each}}
+</tbody>
+</table>
+</template>
