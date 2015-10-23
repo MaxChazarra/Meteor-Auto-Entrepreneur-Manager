@@ -1,16 +1,62 @@
 <template name="clientEdit">
 
-	<a class="waves-effect waves-light btn" href="{{pathFor 'clientList'}}"><i class="material-icons right"></i>Retour à la liste des clients</a>
+  <section class="content-header">
+    <h1>
+      Clients
+      <small>Modifier le client</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-users"></i> Clients</a></li>
+    </ol>
+  </section>
 
-	<form class="client">
-		<input type="text" name="nom" placeholder="Nom du client" value="{{client.nom}}"/>
-		<input type="text" name="prenom" placeholder="Prénom du client" value="{{client.prenom}}"/>
-		<input type="text" name="adresse" placeholder="Adresse du client" value="{{client.adresse}}"/>
-		<input type="text" name="codePostal" placeholder="Code Postal du client" value="{{client.codePostal}}"/>
-		<input type="text" name="ville" placeholder="Ville du client" value="{{client.ville}}"/>
-		<button class="btn waves-effect waves-light" type="submit" name="action">Modifier
-		    <i class="material-icons right"></i>
-		</button>
-	</form>
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">
+              <a type="button" class="btn btn-block btn-warning" href="{{pathFor 'clientList'}}"><i class="fa fa-hand-o-left"></i>  Retour à la liste des clients</a>
+            </h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+          		<form class="client">
+          			<div class="form-group">
+	                  <label>Nom</label>
+	                  <input class="form-control" type="text" name="nom" placeholder="Nom du client" value="{{client.nom}}">
+	                </div>
+
+          			<div class="form-group">
+	                  <label>Prénom</label>
+	                  <input class="form-control" type="text" name="prenom" placeholder="Prénom du client" value="{{client.prenom}}">
+	                </div>	
+
+          			<div class="form-group">
+	                  <label>Adresse</label>
+	                  <input class="form-control" type="text" name="adresse" placeholder="Adresse du client" value="{{client.adresse}}">
+	                </div>					
+
+          			<div class="form-group">
+	                  <label>Code Postal</label>
+	                  <input class="form-control" type="text" name="codePostal" placeholder="Code Postal du client" value="{{client.codePostal}}">
+	                </div>		
+
+          			<div class="form-group">
+	                  <label>Ville</label>
+	                  <input class="form-control" type="text" name="ville" placeholder="Ville du client" value="{{client.ville}}">
+	                </div>	
+
+					<button class="btn btn-block btn-success btn-lg" type="submit" name="action">Modifier le client
+					    <i class="fa fa-save"></i>
+					</button>
+				</form>
+          </div>
+          <!-- /.box-body -->
+
+        </div>
+      </div>
+    </div>
+  </section>
 
 </template>

@@ -1,25 +1,85 @@
 <template name="devisAdd">
 
-	<a class="waves-effect waves-light btn" href="{{pathFor 'devisList'}}"><i class="material-icons right"></i>Retour à la liste des devis</a>
+  <section class="content-header">
+    <h1>
+      Devis
+      <small>Créer un nouveau devis</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-users"></i> Devis</a></li>
+    </ol>
+  </section>
 
-	<form class="new-devis">
-		<input type="text" name="numero" placeholder="Numéro du devis" />
-		<input type="date" name="date" placeholder="Date du devis" />
-	    <select class="browser-default select-client">
-	    	<option value="" disabled selected>Choisir le client</option>
-	    	{{#each clients}}
-		      <option value="{{ _id }}">{{ nom }} {{ prenom }}</option>
-		    {{/each}}
-	    </select>
-		<input type="text" name="adresse" placeholder="Adresse du client" />
-		<input type="text" name="codePostal" placeholder="Code Postal du client" />
-		<input type="text" name="ville" placeholder="Ville du client" />
-		<input type="text" name="percentDebut" placeholder="Pourcentage début de travaux" />
-		<input type="text" name="percentPendant" placeholder="Pourcentage pendant les travaux" />
-		<input type="text" name="percentFin" placeholder="Pourcentage fin de travaux" />
-		<button class="btn waves-effect waves-light" type="submit" name="action">Créer le devis
-		    <i class="material-icons right"></i>
-		</button>
-	</form>
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">
+              <a type="button" class="btn btn-block btn-warning" href="{{pathFor 'devisList'}}"><i class="fa fa-hand-o-left"></i>  Retour à la liste des devis</a>
+            </h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+          		<form class="new-devis">
+          			<div class="col-xs-12">
+          			<div class="form-group col-xs-2">
+	                  <label>Numéro</label>
+	                  <input class="form-control" type="text" name="numero" placeholder="Numéro du devis">
+	                </div>
 
+          			<div class="form-group col-xs-4">
+	                  <label>Date</label>
+	                  <input class="form-control" type="text" name="date" placeholder="Date du devis (ex: 8 mai 2015)">
+	                </div></div>
+
+	                <div class="form-group">
+		                <label>Client</label>
+		                <select name="clientId" aria-hidden="true" tabindex="-1" class="form-control select2 select2-hidden-accessible select-client" style="width: 100%;">
+					    	<option value="" disabled selected>Choisir le client</option>
+					    	{{#each clients}}
+						      <option value="{{ _id }}">{{ nom }} {{ prenom }}</option>
+						    {{/each}}
+		                </select>
+		            </div>
+
+          			<div class="form-group col-xs-4">
+	                  <label>Adresse</label>
+	                  <input class="form-control" type="text" name="adresse" placeholder="Adresse du chantier">
+	                </div>					
+
+          			<div class="form-group col-xs-4">
+	                  <label>Code Postal</label>
+	                  <input class="form-control" type="text" name="codePostal" placeholder="Code Postal du chantier">
+	                </div>		
+
+          			<div class="form-group col-xs-4">
+	                  <label>Ville</label>
+	                  <input class="form-control" type="text" name="ville" placeholder="Ville du chantier">
+	                </div>	
+
+	                <div class="form-group col-xs-4">
+	                  <label>% début du chantier</label>
+	                  <input class="form-control" type="text" name="percentDebut" placeholder="Ville du chantier">
+	              </div>
+	              <div class="form-group col-xs-4">
+	                  <label>% pendant le chantier</label>
+	                  <input class="form-control" type="text" name="percentPendant" placeholder="Ville du chantier">
+	                  </div>
+					<div class="form-group col-xs-4">
+	                  <label>% fin de chantier</label>
+	                  <input class="form-control" type="text" name="percentFin" placeholder="Ville du chantier">
+	                </div>	
+
+					<button class="btn btn-block btn-success btn-lg" type="submit" name="action">Créer le devis
+					    <i class="fa fa-plus"></i>
+					</button>
+				</form>
+          </div>
+          <!-- /.box-body -->
+
+        </div>
+      </div>
+    </div>
+  </section>
 </template>

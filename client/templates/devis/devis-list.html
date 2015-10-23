@@ -1,22 +1,65 @@
 <template name="devisList">
-	<a class="waves-effect waves-light btn" href="{{pathFor 'devisAdd'}}"><i class="material-icons right"></i>Créer un nouveau devis</a>
 
+  <section class="content-header">
+    <h1>
+      Devis
+      <small>Liste des devis</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-calculator"></i> Devis</a></li>
+    </ol>
+  </section>
 
-	<table class="responsive-table striped">
-	        <thead>
-	          <tr>
-	              <th data-field="nom">Numéro</th>
-	              <th data-field="prenom">Date</th>
-	              <th data-field="adresse">Adresse</th>
-	              <th data-field="codePostal">Code Postal</th>
-	              <th data-field="ville">Ville</th>
-	          </tr>
-	        </thead>
-		<tbody>
-	    {{#each devis}}
-	      {{> devisItem}}
-	    {{/each}}
-	</tbody>
-	</table>
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">
+              <a type="button" class="btn btn-block btn-success" href="{{pathFor 'devisAdd'}}"><i class="fa fa-plus"></i>  Ajouter un nouveau devis</a>
+            </h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>Numéro</th>
+                  <th>Date</th>
+                  <th>Client</th>
+                  <th>Lieu</th>
+                  <th>Montant</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+			    {{#each devis}}
+			      {{> devisItem}}
+			    {{/each}}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Numéro</th>
+                  <th>Date</th>
+                  <th>Client</th>
+                  <th>Lieu</th>
+                  <th>Montant</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- /.box-body -->
 
+          <div class="box-header">
+            <h3 class="box-title">
+              <a type="button" class="btn btn-block btn-success" href="{{pathFor 'devisAdd'}}"><i class="fa fa-plus"></i>  Ajouter un nouveau devis</a>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>

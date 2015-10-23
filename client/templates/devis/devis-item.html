@@ -3,9 +3,11 @@
   <tr>
     <td>{{numero}}</td>
     <td>{{date}}</td>
-    <td>{{adresse}}</td>
-    <td>{{codePostal}}</td>
-    <td>{{ville}}</td>
+    <td>{{getClientFullName}}</td>
+    <td>{{adresse}}, {{codePostal}} {{ville}}</td>
+    <td>0,00 €</td>
+    <td><a type="button" class="btn btn-block btn-warning" href="{{pathFor 'devisEdit' id=this._id}}"><i class="fa fa-edit"></i>  Modifier</a></td>
+    <td><button type="button" class="btn btn-block btn-danger delete"><i class="fa fa-trash"></i>Supprimer</button></td>
   </tr>
 
 </template>

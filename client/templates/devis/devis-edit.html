@@ -1,0 +1,110 @@
+<template name="devisEdit">
+
+  <section class="content-header">
+    <h1>
+      Devis {{devis.numero}}
+      <small>Editer le devis</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-users"></i> Devis</a></li>
+    </ol>
+  </section>
+
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">
+              <a type="button" class="btn btn-block btn-warning" href="{{pathFor 'devisList'}}"><i class="fa fa-hand-o-left"></i>  Retour à la liste des devis</a>
+            </h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+
+          	
+          	<div class="row">
+		        <div class="col-xs-12">
+		          <h2 class="page-header">
+		            <i class="fa fa-calculator"></i> Client : {{#with client this.devis.clientId}}{{nom}} {{prenom}}{{/with}}
+		            <small class="pull-right">Date: {{devis.date}}</small>
+		          </h2>
+		        </div>
+		        <!-- /.col -->
+		      </div>
+		      <!-- info row -->
+		      <div class="row invoice-info">
+		        <div class="col-sm-12 invoice-col">
+		          <address>
+		            <strong>La Truelle</strong><br>
+		            Prestations de services - Rénovation - Dépannage<br>
+		            N° SIRET 512 613 811 100 11<br>
+		            Max CHAZARRA<br>
+		            74 Avenue Delphine<br>
+		            06100 Nice<br>
+		            06 87 71 41 68<br>
+		          </address>
+		        </div>
+
+		        <!-- /.col -->
+		      </div>
+		      <!-- /.row -->
+
+		     <div class="row invoice-info">
+		        <div class="col-sm-12 text-center">
+		          <strong>Devis n°{{devis.numero}}</strong>
+		        </div>
+		        <!-- /.col -->
+		      </div>
+
+
+		      <div class="row invoice-info">
+		        <div class="col-sm-6 invoice-col text-left">
+		          <address>
+		            <strong>Adresse du chantier</strong><br>
+		            {{devis.adresse}}<br>
+		            {{devis.codePostal}} {{devis.ville}}<br>
+		          </address>
+		        </div>
+
+		       	<div class="col-sm-6 invoice-col text-right">
+		          <address>
+		            <strong>Adresse du client</strong><br>
+		            {{#with client this.devis.clientId}}
+		            	{{nom}} {{prenom}}<br>
+		            	{{adresse}}<br>
+		            	{{codePostal}} {{ville}}<br>
+		            {{/with}}
+		          </address>
+		        </div>
+
+		        <!-- /.col -->
+		      </div>
+
+		      
+		     
+		      <!-- this row will not appear when printing -->
+		      <div class="row no-print">
+		        <div class="col-xs-12">
+		        	{{> categoriesAdd}}
+		          <a type="button" href="invoice-print.html" target="_blank" class="btn btn-default pull-right"><i class="fa fa-print"></i> Print</a>
+		          <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+		            <i class="fa fa-download"></i> Generate PDF
+		          </button>
+		        </div>
+		      </div>
+				
+
+				<!-- {{> categoriesList}} -->
+          </div>
+          <!-- /.box-body -->
+          <!-- /.content -->
+    		<div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+</template>

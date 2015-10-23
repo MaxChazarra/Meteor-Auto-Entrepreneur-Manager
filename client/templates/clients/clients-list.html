@@ -1,23 +1,62 @@
 <template name="clientList">
+  <section class="content-header">
+    <h1>
+      Clients
+      <small>Liste des clients</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-users"></i> Clients</a></li>
+    </ol>
+  </section>
 
-<a class="waves-effect waves-light btn" href="{{pathFor 'clientAdd'}}"><i class="material-icons right"></i>Ajouter un nouveau client</a>
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">
+              <a type="button" class="btn btn-block btn-success" href="{{pathFor 'clientAdd'}}"><i class="fa fa-plus"></i>  Ajouter un nouveau client</a>
+            </h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>NOM Prénom</th>
+                  <th>Adresse</th>
+                  <th>Code Postal</th>
+                  <th>Ville</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each clients}}
+                {{> clientItem}}
+                {{/each}}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>NOM Prénom</th>
+                  <th>Adresse</th>
+                  <th>Code Postal</th>
+                  <th>Ville</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- /.box-body -->
 
-<table class="responsive-table striped">
-        <thead>
-          <tr>
-              <th data-field="nom">Nom</th>
-              <th data-field="prenom">Prénom</th>
-              <th data-field="adresse">Adresse</th>
-              <th data-field="codePostal">Code Postal</th>
-              <th data-field="ville">Ville</th>
-              <th data-field=""></th>
-              <th data-field=""></th>
-          </tr>
-        </thead>
-	<tbody>
-    {{#each clients}}
-      {{> clientItem}}
-    {{/each}}
-</tbody>
-</table>
+          <div class="box-header">
+            <h3 class="box-title">
+              <a type="button" class="btn btn-block btn-success" href="{{pathFor 'clientAdd'}}"><i class="fa fa-plus"></i>  Ajouter un nouveau client</a>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>

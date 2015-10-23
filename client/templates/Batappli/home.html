@@ -1,3 +1,133 @@
 <template name="home">
-Bienvenue sur l'accueil
+    <section class="content-header">
+      <h1>
+        Accueil
+        <small>Tableau de bord</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Accueil</a></li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Info boxes -->
+      <div class="row">
+        <div class="col-md-4 col-xs-12">
+          <div class="info-box bg-yellow">
+            <span class="info-box-icon"><i class="ion ion-person-stalker"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Clients</span>
+              <span class="info-box-number">{{nbClients}}</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+                  <span class="progress-description">
+                    <a href="{{pathFor 'clientList'}}" style="text-decoration: none;color:white;">Accéder à la liste des clients <i class="fa fa-angle-right"></i></a>
+                  </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-md-4 col-xs-12">
+          <div class="info-box bg-red">
+            <span class="info-box-icon"><i class="ion ion-calculator"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Devis</span>
+              <span class="info-box-number">{{nbDevis}}</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+                  <span class="progress-description">
+                    <a href="{{pathFor 'devisList'}}" style="text-decoration: none;color:white;">Accéder à la liste des devis <i class="fa fa-angle-right"></i></a>
+                  </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+        </div>
+        <!-- /.col -->
+
+        <!-- fix for small devices only -->
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-md-4 col-xs-12">
+                    <div class="info-box bg-green">
+            <span class="info-box-icon"><i class="ion ion-cash"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Factures</span>
+              <span class="info-box-number">{{nbFactures}}</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+                  <span class="progress-description">
+                    <a href="{{pathFor 'facturesList'}}" style="text-decoration: none;color:white;">Accéder à la liste des factures <i class="fa fa-angle-right"></i></a>
+                  </span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">Récapitulatif</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-footer">
+              <div class="row">
+                <div class="col-sm-3 col-xs-6">
+                  <div class="description-block border-right">
+                    <h5 class="description-header">35 210,43 €</h5>
+                    <span class="description-text">TOTAL DEVIS</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-3 col-xs-6">
+                  <div class="description-block border-right">
+                    <h5 class="description-header">10 390,90 €</h5>
+                    <span class="description-text">TOTAL FACTURES</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-3 col-xs-6">
+                  <div class="description-block border-right">
+                    <h5 class="description-header">24 %</h5>
+                    <span class="description-text">TAUX DE TRANFORMATION</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-3 col-xs-6">
+                  <div class="description-block">
+                    <h5 class="description-header">Serge CAMELINI</h5>
+                    <span class="description-text">MEILLEUR CLIENT</span>
+                  </div>
+                  <!-- /.description-block -->
+                </div>
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+    </section>
 </template>

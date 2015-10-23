@@ -8,5 +8,17 @@ Template.header.helpers({
     });
     
     return active && 'active';
+  },
+
+  nbClients: function(){
+  	return Clients.find({}).count();
+  },
+
+  nbDevis: function(){
+  	return Devis.find({}).count();
+  },
+
+  nbFactures: function(){
+  	return Factures.find({}).count();
   }
 });

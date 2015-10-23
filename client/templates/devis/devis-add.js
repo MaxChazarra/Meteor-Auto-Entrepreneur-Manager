@@ -1,3 +1,4 @@
+
   Template.devisAdd.events({
     "submit .new-devis": function (event) {
       // Prevent default browser form submit
@@ -21,10 +22,15 @@
 
     },
 
-    "change .select-client": function (event) {
+    "change .select-client": function (event, template) {
       // Prevent default browser form submit
       event.preventDefault();
-      console.log(clients._id);
+      
 
+      var client = Clients.findOne({_id:event.target.value});
+
+      template.find("[name=adresse]").value = client.adresse;
+      template.find("[name=codePostal]").value = client.codePostal;
+      template.find("[name=ville]").value = client.ville;
     },
   });

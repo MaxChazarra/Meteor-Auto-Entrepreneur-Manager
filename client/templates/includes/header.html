@@ -1,36 +1,60 @@
 <template name="header">
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Batappli</a>
-      <ul class="right hide-on-med-and-down">
-        <li class="{{activeRouteClass 'home'}}">
-          <a href="{{pathFor 'home'}}">Accueil</a>
-        </li>
-        <li class="{{activeRouteClass  'clientList'}}">
-          <a href="{{pathFor 'clientList'}}">Clients</a>
-        </li>
-        <li class="{{activeRouteClass  'devisList'}}">
-          <a href="{{pathFor 'devisList'}}">Devis</a>
-        </li>
-        <li class="{{activeRouteClass  'facturesList'}}">
-          <a href="{{pathFor 'facturesList'}}">Factures</a>
-        </li>
-      </ul>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li class="{{activeRouteClass 'home'}}">
-          <a href="{{pathFor 'home'}}">Accueil</a>
-        </li>
-        <li class="{{activeRouteClass  'clientList'}}">
-          <a href="{{pathFor 'clientList'}}">Clients</a>
-        </li>
-        <li class="{{activeRouteClass  'devisList'}}">
-          <a href="{{pathFor 'devisList'}}">Devis</a>
-        </li>
-        <li class="{{activeRouteClass  'facturesList'}}">
-          <a href="{{pathFor 'facturesList'}}">Factures</a>
-        </li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="{{pathFor 'home'}}" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>M</b> C</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Max</b> CHAZARRA</span>
+    </a>
+
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="{{activeRouteClass 'home'}}">
+            <a href="{{pathFor 'home'}}">
+              <i class="fa fa-dashboard"></i> Accueil
+            </a>
+          </li>
+          <li class="{{activeRouteClass 'clientList'}}">
+            <a href="{{pathFor 'clientList'}}">
+              <i class="fa fa-users"></i> Clients
+              <span class="label label-warning">{{nbClients}}</span>
+            </a>
+          </li>
+          <!-- Notifications: style can be found in dropdown.less -->
+          <li class="{{activeRouteClass 'devisList'}}">
+            <a href="{{pathFor 'devisList'}}">
+              <i class="fa fa-calculator"></i> Devis
+              <span class="label label-danger">{{nbDevis}}</span>
+            </a>
+          </li>
+          <!-- Tasks: style can be found in dropdown.less -->
+          <li class="{{activeRouteClass 'facturesList'}}">
+            <a href="{{pathFor 'facturesList'}}">
+              <i class="fa fa-money"></i> Factures
+              <span class="label label-success">{{nbFactures}}</span>
+            </a>
+          </li>
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="user user-menu">
+            <a href="#">
+              <img src="/assets/img/maxchazarra.png" class="user-image" alt="User Image">
+              <span class="hidden-xs">Max CHAZARRA</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
 </template>

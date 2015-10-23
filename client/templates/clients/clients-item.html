@@ -1,13 +1,12 @@
 <template name="clientItem">
 
   <tr>
-    <td>{{nom}}</td>
-    <td>{{prenom}}</td>
+    <td>{{nom}} {{prenom}}</td>
     <td>{{adresse}}</td>
     <td>{{codePostal}}</td>
     <td>{{ville}}</td>
-    <td><button class="btn waves-effect waves-light delete">Supprimer</button></td>
-    <td><a class="waves-effect waves-light btn" href="{{pathFor 'clientEdit' id=this._id}}">Modifier</a></td>
+    <td><a type="button" class="btn btn-block btn-warning" href="{{pathFor 'clientEdit' id=this._id}}"><i class="fa fa-edit"></i>  Modifier</a></td>
+    <td><button type="button" class="btn btn-block btn-danger delete"><i class="fa fa-trash"></i>Supprimer</button></td>
   </tr>
 
 </template>
